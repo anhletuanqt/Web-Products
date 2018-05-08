@@ -1,0 +1,834 @@
+*{margin: 0; padding: 0;} 
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+.menupage{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: #0d0c0cde;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.menupageActive{
+	visibility: visible;
+	opacity: 1;
+}
+.menupage ul li .limenuActive{
+	color: #7DCDFF;
+}
+.menupage .container-fluid{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.menupage ul{
+	list-style: none;
+}
+.menupage ul li{
+	text-align: center;
+}
+
+
+.menupage ul li a{
+	color: white;
+    text-align: center;
+    font-size: 27px;
+    margin: 10px 0;;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.menupage ul li a:hover{
+	color: #C8C8C8;
+	text-decoration: none;
+}
+.menupage ul li a:after{
+	content: ']';
+	opacity: 0;
+	transition: 0.4s;
+	display: inline-block;
+	color: #C8C8C8;
+}
+.menupage ul li a:before{
+	content: '[';
+	opacity: 0;
+	transition: 0.4s;
+	display: inline-block;
+	color: #C8C8C8;
+}
+
+.menupage ul li a:hover:after{
+	transform: translateX(30px);
+	opacity: 1;
+}
+.menupage ul li a:hover:before{
+	transform: translateX(-30px);
+	opacity: 1;
+}
+
+.container-fluid{
+	padding: 0 8%;
+}
+/*CSS for header*/
+nav{
+	position: absolute;
+	top: 8%;
+	right: 5%;
+	z-index: 11;
+}
+
+nav .bar,nav .close1{
+	width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    color: #59A3FF;
+    font-size: 30px;
+    position: fixed;
+    cursor: pointer;
+   
+    opacity: 0;
+	visibility: hidden;
+}
+nav span.navActive{
+	opacity: 1;
+	visibility: visible;
+}
+
+.headerlg{
+	position: absolute;
+	left: 3%;
+	top: 8%;
+	z-index: 5;
+}
+header{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.slider{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.motslider{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transition: 1s;
+}
+
+.sliderActive{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+
+.layer0{
+	position: absolute;
+	bottom: 0;
+	left: -50%;
+	z-index: 1;
+	opacity: 0;
+}
+.sliderActive .layer0{
+	animation: layer0 1s forwards;
+    animation-delay: 0.2s;
+}
+@-webkit-keyframes layer0{
+	0%{
+		transform: translateX(-100%);
+	}
+
+	100%{
+		transform: translateX(0);
+		opacity: 0.7;
+	}
+}
+
+.layer1{
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: -60%;
+	opacity: 0;
+}
+.sliderActive .layer1{
+	animation: layer1 1s forwards;
+    animation-delay: 0.5s;
+}
+@-webkit-keyframes layer1{
+	0%{
+		transform: translateX(-100%);
+	}
+
+	100%{
+		transform: translateX(0);
+		opacity: 0.9
+	}
+}
+.layer2{
+	position: absolute;
+	top: -30%;
+	right: 0;
+	z-index: 1;
+	opacity: 0;
+}
+.sliderActive .layer2{
+	animation: layer2 1s forwards;
+    animation-delay: 0.2s;
+}
+@-webkit-keyframes layer2{
+	0%{
+		transform: translateX(100%);
+	}
+
+	100%{
+		transform: translateX(0);
+		opacity: 0.9;
+	}
+}
+
+.text{
+	width: 24%;
+    position: absolute;
+    color: white;
+    z-index: 3;
+    left: 8%;
+    top: 20%;
+}
+
+.text h1,.text hr,.text h2,.text p,.text a{
+	opacity: 0;
+}
+
+
+.text h1{
+	font-size: 80px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+.sliderActive .text h1{
+	animation: h1 1s forwards;
+    animation-delay: 1s;
+}
+@-webkit-keyframes h1{
+	0%{
+		transform: translateX(-20%);
+	}
+	100%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.text hr{
+    width: 20%;
+    border: 2px solid white;
+    margin-bottom: 30px;
+}
+.sliderActive .text hr{
+	animation: hr 1s forwards;
+    animation-delay: 1.6s;
+}
+@-webkit-keyframes hr{
+	0%{
+		transform: translateX(-40%);
+	}
+	100%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.text h2{
+	font-size: 35px;
+	margin-bottom: 30px;
+}
+.sliderActive .text h2{
+	animation: h2 1s forwards;
+    animation-delay: 1.2s;
+}
+@-webkit-keyframes h2{
+	0%{
+		transform: translateX(-20%);
+	}
+	100%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.text p{
+	font-size: 15px;
+	margin-bottom: 40px;
+}
+.sliderActive .text p{
+	animation: p 1s forwards;
+    animation-delay: 1.8s;
+}
+@-webkit-keyframes p{
+	0%{
+		transform: translateX(-20%);
+	}
+	100%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.text a{
+	color: white;
+	padding: 10px 20px;
+	border: 1px solid white;
+	border-radius: 5px;
+	display: inline-block;
+	transition: 0.5s;
+}
+.sliderActive .text a{
+	animation: a 1s forwards;
+    animation-delay:2.2s;
+}
+@-webkit-keyframes a{
+	0%{
+		transform: translateX(-20%);
+	}
+	100%{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.text a:hover{
+	text-decoration: none;
+	color: black;
+	background: white;
+}
+ /*css for sliderButton*/
+ .sliderButton ul{
+ 	position: absolute;
+    width: 120px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    /* height: 30px; */
+    z-index: 4;
+    text-align: center;
+ }
+
+ .sliderButton ul li{
+ 	border: 2px solid white;
+ 	width: 15px;
+ 	height: 15px;
+ 	border-radius: 50%;
+ 	margin: 5px 5px;
+ 	display: inline-block;
+ 	box-sizing: border-box;
+ 	transition: all 0.5s;
+ }
+ .sliderButton ul li:hover{
+ 	background-color: white;
+	border:none;
+	cursor: pointer;
+ }
+
+ .liactive{
+ 	background-color: white;
+	border:none;
+ }
+ /*css for sliderButton*/
+/*CSS for header*/
+
+/*----------------------------------------------------------------------------------*/
+
+/*Css for underHome*/
+.underHome{
+	background-image: url('http://betheme.muffingroupsc.netdna-cdn.com/be/webdesign/wp-content/uploads/2015/03/home_webdesign_pattern1.png');
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+
+.sl{
+	display: flex;
+    padding: 20px 30px;
+    border: 1px solid;
+    border-radius: 5px;
+    justify-content: space-around;
+}
+.sl img{
+	width: 30%;
+}
+.sl h1{
+	font-weight: 400;
+}
+
+.sl1{
+	display: flex;
+	align-items: center;
+}
+
+.sl1 p{
+	font-size: 24px;
+}
+
+
+.uh p{
+	font-size: 25px;
+    margin-top: 20px;
+    color: #474747;
+    margin-bottom: 0; 
+    float: right;
+}
+
+
+
+/*css for mang xa hoi*/
+.t1{
+	width: 60px;
+    height: 60px;
+    display: inline-block;
+    transition: 0.4s;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 5px;
+    background: white;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.tt{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 60px;
+    height: 60px;
+    display: inline-block;
+    transition: 0.4s;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 5px;
+    transform: translateY(100%);
+    color: white;
+}
+.uh ul li:hover .t1{
+	transform: translateY(-100%);
+}
+.uh ul li:hover .tt{
+	transform: translateY(0);
+}
+.uh ul{
+	width: 100%;
+}
+.uh ul li{
+	float: right;
+	list-style: none;
+	overflow: hidden;
+	position: relative;
+}
+
+.ttfb{
+	background: #3A589B;
+}
+.ttgg{
+	background: #D6492F;
+}
+.tttw{
+	background: #32CCFE;
+}
+.ttvm{
+	background: #1CA7CC;
+}
+
+/*Css for underHome*/
+
+/*------------------------------------------------------------------------------------------*/
+
+/*Css for what*/
+.what{
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+.whatText h1{
+	font-size: 55px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.whatText h1 b{
+	font-weight: 500;
+}
+
+.whatText p{
+	color: #8F8F8F;
+	font-size: 22px;
+	margin-bottom: 60px;
+}
+
+.oneImg{
+	position: relative;
+	margin-bottom: 40px;
+	overflow: hidden;
+	cursor:pointer;
+}
+.oneImg .whatimg{
+	transition: 0.5s;
+}
+
+  .oneImg:hover .whatimg{
+	transform: scale(1.2);
+}
+.oneImg:hover .n1,.oneImg:hover .n2,.oneImg:hover .n3,.oneImg:hover .n4,.oneImg:hover .n5{
+	
+	visibility: visible;
+	opacity: 0.75;
+}
+.oneImg:hover .nen{
+	opacity: 1;
+	visibility: visible;
+	transform:scale(1);
+}
+.n1,.n2,.n3,.n4,.n5{
+	transition: 0.5s;
+	background: #267EA8;
+	position: absolute;
+	top:0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+}
+.n2{
+	background: #E14585;
+}
+.n3{
+	background:  #C48F32;
+}
+.n4{
+	background:  #1E3857;
+}
+.n5{
+	background:  #A09480
+}
+.oneImg .nen{
+	transition: 0.5s;
+    position: absolute;
+    color: white;
+    width: 100%;
+    /* margin: 0 auto; */
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.5);
+	opacity: 0;
+	visibility: hidden;
+	text-align: center;
+}
+
+.nen h2{
+	margin-top: 20px;
+}
+.nen .n1{
+	background: #287FAA;
+}
+
+.what a{
+	padding: 20px 35px;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: #0C0C0C;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.what a:hover{
+	text-decoration: none;
+	background: #EFEFEF;
+}
+/*Css for what*/
+
+/*-------------------------------------------------------------------------------------------------*/
+
+/*css for we*/
+.we{
+	background: url(images/girl.jpg);
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+	background-size: cover;
+}
+
+.we h2{
+	font-size: 41px;
+	font-weight: 400;
+}
+
+.we h2 b,.our h2 b{
+	font-weight: 700;
+}
+
+.we p{
+	margin: 0px 0;
+	margin-top: 30px;
+	font-size: 16px;
+	color: #7E7F7F;
+}
+
+.we a{
+	margin-top: 20px;
+    display: inline-block;
+    font-size: 30px;
+}
+/*css for we*/
+
+/*---------------------------------------------------------------------------------------------*/
+
+/*css for our*/
+.our{
+	padding: 100px 0;
+	background-image: url('http://betheme.muffingroupsc.netdna-cdn.com/be/webdesign/wp-content/uploads/2015/03/home_webdesign_pattern1.png');
+}
+
+.our h2{
+	font-size: 40px;
+	font-weight: 400;
+	margin-bottom: 25px;
+}
+
+.our p{
+	color: #7B7B7B;
+	font-size: 16px;
+}
+.outImg{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.oneImg{
+	position: relative;
+}
+.oneImg:hover .andi{
+	opacity: 1;
+}
+.oneImg .andi{
+	transition: 0.5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+}
+.outImg img{
+	height: 80px;
+}
+
+/*css for our*/
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+/*css for footer*/
+
+footer{
+	
+	background: url(images/veo.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+.footert{
+	padding: 140px 0;
+	color: white;
+}
+
+.footert h2{
+	font-size: 40px;
+}
+
+.footert img{
+	width: 100%;
+	padding-top: 15px;
+}
+
+.form{
+	padding-top: 14%;
+}
+
+.form .ip{
+	width: 70%;
+    height: 45px;
+    margin-right: 10px;
+    padding: 5px 0 6px 10px;
+	font-size: 15px;
+	border-radius:0;
+}
+
+.form .ip:focus{
+	background: #E9F5FC;
+	padding: 5px 0 6px 10px;
+	font-size: 15px;
+}
+
+
+.form .sub{
+	padding: 10px 20px 11px 20px;
+	border: 2px solid #59A3FF;
+	color: #59A3FF;
+	border-radius: 3px;
+	transition: 0.5s;
+}
+
+.form .sub:hover{
+	color: white;
+	background-color: #59A3FF;
+	text-decoration: none;
+}
+
+.footerd{
+	    background-image: url(http://betheme.muffingroupsc.netdna-cdn.com/be/webdesign/wp-content/uploads/2015/03/home_webdesign_pattern2.png);
+}
+.duoi1{
+	padding: 50px 0;
+	border-bottom: 1px solid #ffffff4f;
+}
+.duoi img{
+	width: 100%;
+}
+.duoi1 .ic{
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	line-height: 40px;
+	text-align: center;
+	font-size: 18px;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.icfb{
+	background: #3A589B;
+}
+.iclk{
+	background: #007BB6;
+}
+.icgg{
+	background: #D6492F;
+}
+.icpt{
+	background: #CB2027
+}
+.ictw{
+	background: #32CCFE;
+}
+
+.duoi2{
+	padding: 30px 0;
+}
+.duoi2 p{
+	font-size: 14px;
+    color: #909090;
+    margin-bottom: 0;
+}
+.duoi2 p a{
+	color: white;
+}
+.duoi2 p a:hover{
+	color: #909090;
+}
+.lista{
+	float: right;
+}
+
+.lista a{
+	float: right;
+	display: inline-block;
+	padding: 0 5px;
+	font-size: 14px;
+	color: #909090;
+}
+
+a.km{
+	color: #6EADD5;
+}
+
+.cg{
+	
+	border-right: 1px solid;
+}
+/*css for footer*/
+
+
+@media (min-width: 769px) and (max-width: 1024px){
+	.layer0 {left: -43%;}
+	.layer2{top: -10%;}
+	.text{top:42%;}
+	.headerlg{top:5%;}
+	nav{top:5%;right: 8%}
+	.sl{padding: 33px 30px;}
+	.outImg img {height: 70px; }
+	.footert h2 {font-size: 36px; }
+	.lista a{font-size: 13px; }
+	.form .ip{margin-bottom: 20px;width: 90%;}
+	
+}
+
+@media (max-width: 768px) and (min-width:576px){
+	.layer0 {left: -100%;}
+	.layer1{left: -120%;}
+	.layer2{top: -15%;}
+	.text{top:40%;width: 40%;}
+	.text p {font-size: 10px; margin-bottom: 30px; }
+	.footert h2 {font-size: 23px; }
+	.we h2 {font-size: 28px; }
+	.we p {font-size: 14px; }
+	.our h2 {font-size: 30px; margin-top: 20px; }
+	.form .ip {width: 100%; height: 40px; margin-bottom: 20px; }
+} 
+
+@media (max-width: 575px){
+	.footert h2 {font-size: 30px; margin-top: 30px; }
+	.form .ip {width: 100%; margin-bottom: 30px; }
+	.uh ul {margin-left: 12px;}
+	.uh ul li {float: left; }
+	.layer0 {left: -315%; }
+	.layer1 {left: -343%; }
+	.text {width: 45%; }
+	.text p {font-size: 9px;margin-bottom: 20px; }
+	.text h1{font-size: 50px;margin-bottom: 10px;}
+	.text h2 {font-size: 25px; margin-bottom: 10px; }
+	.text hr{margin-bottom: 20px;}
+	.text a {padding: 6px 15px; } 
+
+	nav {right: 16%; }
+	.outImg {
+	    display: flex;
+	    justify-content: center;
+	    flex-wrap: wrap;
+	    text-align: center;
+	}
+}
